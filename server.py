@@ -20,7 +20,7 @@ def connectnewuser(c,ad):
 def sendtoall(m,c):
     for client in clients:
         if client !=c:
-            client.send(m.encode('utf-8'))
+            client.send(bytes(m, encoding='utf-8'))
 while True:
     c,ad=s.accept()
     clients.append(c)
